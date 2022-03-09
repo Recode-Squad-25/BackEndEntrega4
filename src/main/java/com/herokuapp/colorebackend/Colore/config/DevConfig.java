@@ -6,6 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.herokuapp.colorebackend.Colore.service.DBService;
+import com.herokuapp.colorebackend.Colore.service.EmailService;
+import com.herokuapp.colorebackend.Colore.service.SmtpEmailService;
+
 
 @Configuration
 @Profile("dev")

@@ -16,9 +16,9 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import br.com.colore.security.JWTAuthenticationFilter;
-import br.com.colore.security.JWTAuthorizationFilter;
-import br.com.colore.security.JWTUtil;
+import com.herokuapp.colorebackend.Colore.security.JWTAuthenticationFilter;
+import com.herokuapp.colorebackend.Colore.security.JWTAuthorizationFilter;
+import com.herokuapp.colorebackend.Colore.security.JWTUtil;
 
 @Configuration
 @EnableWebSecurity
