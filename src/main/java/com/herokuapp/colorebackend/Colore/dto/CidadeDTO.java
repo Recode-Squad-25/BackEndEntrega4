@@ -2,7 +2,7 @@ package com.herokuapp.colorebackend.Colore.dto;
 
 import java.io.Serializable;
 
-import br.com.colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
 
 public class CidadeDTO implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
 
 @Repository
 public interface CidadeRepository extends JpaRepository<Cidade, Integer> {

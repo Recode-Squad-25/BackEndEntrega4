@@ -15,8 +15,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import br.com.colore.dto.CredenciaisDTO;
+import com.herokuapp.colorebackend.Colore.dto.CredenciaisDTO;
 
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {

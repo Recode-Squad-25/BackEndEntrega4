@@ -9,7 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import br.com.colore.services.exceptions.ObjectNotFoundException;
+import com.herokuapp.colorebackend.Colore.service.exceptions.ObjectNotFoundException;
 
 @ControllerAdvice
 public class ResourceExceptionHandler {

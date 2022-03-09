@@ -2,7 +2,7 @@ package com.herokuapp.colorebackend.Colore.dto;
 
 import java.io.Serializable;
 
-import br.com.colore.models.Estado;
+import com.herokuapp.colorebackend.Colore.models.Estado;
 
 public class EstadoDTO implements Serializable {
 	private static final long serialVersionUID = 1L;

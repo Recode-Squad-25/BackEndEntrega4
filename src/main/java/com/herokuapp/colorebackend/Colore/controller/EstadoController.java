@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.colore.dto.CidadeDTO;
-import br.com.colore.dto.EstadoDTO;
-import br.com.colore.models.Cidade;
-import br.com.colore.models.Estado;
-import br.com.colore.services.CidadeService;
-import br.com.colore.services.EstadoService;
+import com.herokuapp.colorebackend.Colore.dto.CidadeDTO;
+import com.herokuapp.colorebackend.Colore.dto.EstadoDTO;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.models.Estado;
+import com.herokuapp.colorebackend.Colore.service.CidadeService;
+import com.herokuapp.colorebackend.Colore.service.EstadoService;
 
 @RestController
 @RequestMapping(value="/estados")

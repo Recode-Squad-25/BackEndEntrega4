@@ -2,7 +2,7 @@ package com.herokuapp.colorebackend.Colore.service;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 
-import br.com.colore.security.UserSS;
+import com.herokuapp.colorebackend.Colore.security.UserSS;
 
 public class UserService {
 	public static UserSS authenticated() {

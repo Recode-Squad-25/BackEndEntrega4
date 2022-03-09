@@ -6,16 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.colore.models.Cidade;
-import br.com.colore.models.Endereco2;
-import br.com.colore.models.Estado;
-import br.com.colore.models.Usuario;
-import br.com.colore.models.enums.Perfil;
-import br.com.colore.models.enums.TipoUsuario;
-import br.com.colore.repositories.CidadeRepository;
-import br.com.colore.repositories.Endereco2Repository;
-import br.com.colore.repositories.EstadoRepository;
-import br.com.colore.repositories.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
+import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.models.Endereco;
+import com.herokuapp.colorebackend.Colore.models.Endereco2;
+import com.herokuapp.colorebackend.Colore.models.Estado;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.CidadeRepository;
+import com.herokuapp.colorebackend.Colore.repository.Endereco2Repository;
+import com.herokuapp.colorebackend.Colore.repository.EstadoRepository;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
+
+
 
 @Service
 public class DBService {
@@ -63,8 +66,8 @@ public class DBService {
 				cidade2);
 		Endereco2 endereco3 = new Endereco2(null, "Avenida Floriano", "2106", null, "Centro", "281777012", usuario2, cidade1);
 
-		usuario1.getEnderecos().addAll(Arrays.asList(endereco1, endereco2));
-		usuario2.getEnderecos().addAll(Arrays.asList(endereco3));
+		usuario1.getEnderecos().add((Endereco) Arrays.asList(endereco1, endereco2));
+		usuario2.getEnderecos().add((Endereco) Arrays.asList(endereco3));
 
 		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2));
 		enderecoRepository.saveAll(Arrays.asList(endereco1, endereco2, endereco3));

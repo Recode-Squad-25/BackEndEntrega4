@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 
-import br.com.colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
 
 public abstract class AbstractEmailService implements EmailService {
 	

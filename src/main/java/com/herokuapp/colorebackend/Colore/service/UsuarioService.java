@@ -12,19 +12,20 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.colore.controllers.exceptions.DataIntegrityException;
-import br.com.colore.dto.UsuarioDTO;
-import br.com.colore.dto.UsuarioNewDTO;
-import br.com.colore.models.Cidade;
-import br.com.colore.models.Endereco2;
-import br.com.colore.models.Usuario;
-import br.com.colore.models.enums.Perfil;
-import br.com.colore.models.enums.TipoUsuario;
-import br.com.colore.repositories.Endereco2Repository;
-import br.com.colore.repositories.UsuarioRepository;
-import br.com.colore.security.UserSS;
-import br.com.colore.services.exceptions.AuthorizationException;
-import br.com.colore.services.exceptions.ObjectNotFoundException;
+import com.herokuapp.colorebackend.Colore.controller.exception.DataIntegrityException;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioDTO;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioNewDTO;
+import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
+import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.models.Endereco2;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.Endereco2Repository;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.security.UserSS;
+import com.herokuapp.colorebackend.Colore.service.exceptions.AuthorizationException;
+import com.herokuapp.colorebackend.Colore.service.exceptions.ObjectNotFoundException;
+
 
 
 @Service

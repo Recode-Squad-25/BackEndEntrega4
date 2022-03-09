@@ -6,9 +6,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.colore.models.Usuario;
-import br.com.colore.repositories.UsuarioRepository;
-import br.com.colore.security.UserSS;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.security.UserSS;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

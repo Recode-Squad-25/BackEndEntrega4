@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.colore.dto.EmailDTO;
-import br.com.colore.security.JWTUtil;
-import br.com.colore.security.UserSS;
-import br.com.colore.services.AuthService;
-import br.com.colore.services.UserService;
+import com.herokuapp.colorebackend.Colore.dto.EmailDTO;
+import com.herokuapp.colorebackend.Colore.security.JWTUtil;
+import com.herokuapp.colorebackend.Colore.security.UserSS;
+import com.herokuapp.colorebackend.Colore.service.AuthService;
+import com.herokuapp.colorebackend.Colore.service.UserService;
 
 @RestController
 @RequestMapping(value = "/auth")

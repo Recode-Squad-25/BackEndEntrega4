@@ -19,8 +19,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import br.com.colore.models.enums.Perfil;
-import br.com.colore.models.enums.TipoUsuario;
+import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
+import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
 
 @Entity
 public class Usuario implements Serializable {

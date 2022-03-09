@@ -11,10 +11,10 @@ import javax.validation.ConstraintValidatorContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerMapping;
 
-import br.com.colore.controllers.exceptions.FieldMessage;
-import br.com.colore.dto.UsuarioDTO;
-import br.com.colore.models.Usuario;
-import br.com.colore.repositories.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.controller.exception.FieldMessage;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioDTO;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
 
 public class UsuarioUpdateValidator implements ConstraintValidator<UsuarioUpdate, UsuarioDTO> {
 

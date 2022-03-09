@@ -8,12 +8,12 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.colore.controllers.exceptions.FieldMessage;
-import br.com.colore.dto.UsuarioNewDTO;
-import br.com.colore.models.Usuario;
-import br.com.colore.models.enums.TipoUsuario;
-import br.com.colore.repositories.UsuarioRepository;
-import br.com.colore.services.validation.utils.BR;
+import com.herokuapp.colorebackend.Colore.controller.exception.FieldMessage;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioNewDTO;
+import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.service.validation.utils.BR;
 
 public class UsuarioInsertValidator implements ConstraintValidator<UsuarioInsert, UsuarioNewDTO> {
 

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.colore.services.validation.UsuarioInsert;
+import com.herokuapp.colorebackend.Colore.service.validation.UsuarioInsert;
 
 @UsuarioInsert
 public class UsuarioNewDTO implements Serializable {

@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.colore.models.Cidade;
-import br.com.colore.repositories.CidadeRepository;
+import com.herokuapp.colorebackend.Colore.models.Cidade;
+import com.herokuapp.colorebackend.Colore.repository.CidadeRepository;
 
 @Service
 public class CidadeService {

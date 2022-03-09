@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.colore.models.Usuario;
-import br.com.colore.repositories.UsuarioRepository;
-import br.com.colore.services.exceptions.ObjectNotFoundException;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
+import com.herokuapp.colorebackend.Colore.service.exceptions.ObjectNotFoundException;
 
 @Service
 public class AuthService {

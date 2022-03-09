@@ -18,10 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import br.com.colore.dto.UsuarioDTO;
-import br.com.colore.dto.UsuarioNewDTO;
-import br.com.colore.models.Usuario;
-import br.com.colore.services.UsuarioService;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioDTO;
+import com.herokuapp.colorebackend.Colore.dto.UsuarioNewDTO;
+import com.herokuapp.colorebackend.Colore.models.Usuario;
+import com.herokuapp.colorebackend.Colore.service.UsuarioService;
+
+
 
 @RestController
 @RequestMapping(value="/usuarios")

@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.colore.models.Estado;
-import br.com.colore.repositories.EstadoRepository;
+import com.herokuapp.colorebackend.Colore.models.Estado;
+import com.herokuapp.colorebackend.Colore.repository.EstadoRepository;
 
 @Service
 public class EstadoService {
