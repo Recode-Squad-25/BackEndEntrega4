@@ -28,6 +28,7 @@ import com.herokuapp.colorebackend.Colore.service.exceptions.ObjectNotFoundExcep
 
 
 
+
 @Service
 public class UsuarioService {
 	
@@ -38,7 +39,7 @@ public class UsuarioService {
 	private UsuarioRepository repo;
 	
 	@Autowired
-	private Endereco2Repository enderecoRepository;
+	private Endereco2Repository endereco2Repository;
 
 	public Usuario find(Integer id) {
 		
@@ -56,7 +57,7 @@ public class UsuarioService {
 	public Usuario insert(Usuario obj) {
 		obj.setId(null);
 		obj = repo.save(obj);
-		enderecoRepository.saveAll(obj.getEnderecos());
+		endereco2Repository.saveAll(obj.getEnderecos());
 		return obj;
 	}
 	
