@@ -40,16 +40,28 @@ public class DBService {
 
 		Estado estado1 = new Estado(null, "Pernambuco");
 		Estado estado2 = new Estado(null, "Bahia");
+		Estado estado3 = new Estado(null, "São Paulo");
+		Estado estado4 = new Estado(null, "Rio de Janeiro");
+		Estado estado5 = new Estado(null, "Ceará");
+		Estado estado6 = new Estado(null, "Rio Grande do Sul");
 
 		Cidade cidade1 = new Cidade(null, "Recife", estado1);
 		Cidade cidade2 = new Cidade(null, "Salvador", estado2);
 		Cidade cidade3 = new Cidade(null, "Garanhuns", estado1);
+		Cidade cidade4 = new Cidade(null, "São Paulo", estado3);
+		Cidade cidade5 = new Cidade(null, "Niterói", estado4);
+		Cidade cidade6 = new Cidade(null, "Fortaleza", estado5);
+		Cidade cidade7 = new Cidade(null, "Porto Alegre", estado6);
 
 		estado1.getCidades().addAll(Arrays.asList(cidade1, cidade3));
 		estado2.getCidades().addAll(Arrays.asList(cidade2));
+		estado3.getCidades().addAll(Arrays.asList(cidade4));
+		estado4.getCidades().addAll(Arrays.asList(cidade5));
+		estado5.getCidades().addAll(Arrays.asList(cidade6));
+		estado6.getCidades().addAll(Arrays.asList(cidade7));
 
-		estadoRepository.saveAll(Arrays.asList(estado1, estado2));
-		cidadeRepository.saveAll(Arrays.asList(cidade1, cidade2, cidade3));
+		estadoRepository.saveAll(Arrays.asList(estado1, estado2, estado3, estado4, estado5, estado6));
+		cidadeRepository.saveAll(Arrays.asList(cidade1, cidade2, cidade3, cidade4, cidade5, cidade6, cidade7));
 
 		Usuario usuario1 = new Usuario(null, "Patrica Brandão", "coloreprojeto1@gmail.com", "12312312312",TipoUsuario.PESSOAFISICA, pe.encode("1234"));
 		usuario1.getTelefones().addAll(Arrays.asList("37621742", "96192575"));

@@ -62,6 +62,7 @@ public class Usuario implements Serializable {
 		this.cpfOuCnpj = cpfOuCnpj;
 		this.tipo = (tipo == null) ? null :  tipo.getCod();
 		this.senha = senha;
+		addPerfil(Perfil.USER);
 	}
 
 	public Integer getId() {
