@@ -1,76 +1,76 @@
 package com.herokuapp.colorebackend.Colore.models;
 
+import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "endereco")
-public class Endereco {
+public class Endereco implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(nullable = false)
-	private int cep;
-	@Column(nullable = false)
-	private String rua;
-	private int numero;
+	private Integer id;
+	private String logradouro;
+	private String numero;
 	private String complemento;
 	private String bairro;
-	private String cidade;
-	private String uf;
-	private String pais;
+	private String cep;
 	
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
+	
+	@ManyToOne
+	@JoinColumn(name="cidade_id")
+	private Cidade cidade;
+
 	public Endereco() {
-		super();
 	}
 
-	public Endereco(int cep, String rua, int numero, String complemento, String bairro, String cidade,
-			String uf, String pais) {
+	public Endereco(Integer id, String logradouro, String numero, String complemento, String bairro, String cep,
+			Usuario usuario, Cidade cidade) {
 		super();
-		this.cep = cep;
-		this.rua = rua;
+		this.id = id;
+		this.logradouro = logradouro;
 		this.numero = numero;
 		this.complemento = complemento;
 		this.bairro = bairro;
-		this.cidade = cidade;
-		this.uf = uf;
-		this.pais = pais;
+		this.cep = cep;
+		this.usuario = usuario;
+		this.setCidade(cidade);
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getCep() {
-		return cep;
+	public String getLogradouro() {
+		return logradouro;
 	}
 
-	public void setCep(int cep) {
-		this.cep = cep;
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
 	}
 
-	public String getRua() {
-		return rua;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
-
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -90,33 +90,33 @@ public class Endereco {
 		this.bairro = bairro;
 	}
 
-	public String getCidade() {
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Cidade getCidade() {
 		return cidade;
 	}
 
-	public void setCidade(String cidade) {
+	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
-	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
-
-	public String getPais() {
-		return pais;
-	}
-
-	public void setPais(String pais) {
-		this.pais = pais;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(bairro, cep, cidade, complemento, id, numero, pais, rua, uf);
+		return Objects.hash(id);
 	}
 
 	@Override
@@ -128,15 +128,8 @@ public class Endereco {
 		if (getClass() != obj.getClass())
 			return false;
 		Endereco other = (Endereco) obj;
-		return Objects.equals(bairro, other.bairro) && cep == other.cep && Objects.equals(cidade, other.cidade)
-				&& Objects.equals(complemento, other.complemento) && id == other.id && numero == other.numero
-				&& Objects.equals(pais, other.pais) && Objects.equals(rua, other.rua) && Objects.equals(uf, other.uf);
+		return Objects.equals(id, other.id);
 	}
-
-	@Override
-	public String toString() {
-		return "Endereco [id=" + id + ", cep=" + cep + ", rua=" + rua + ", numero=" + numero + ", complemento="
-				+ complemento + ", bairro=" + bairro + ", cidade=" + cidade + ", uf=" + uf + ", pais=" + pais + "]";
-	}	
+	
 	
 }

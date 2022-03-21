@@ -18,9 +18,9 @@ import com.herokuapp.colorebackend.Colore.dto.UsuarioNewDTO;
 import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
 import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
 import com.herokuapp.colorebackend.Colore.models.Cidade;
-import com.herokuapp.colorebackend.Colore.models.Endereco2;
+import com.herokuapp.colorebackend.Colore.models.Endereco;
 import com.herokuapp.colorebackend.Colore.models.Usuario;
-import com.herokuapp.colorebackend.Colore.repository.Endereco2Repository;
+import com.herokuapp.colorebackend.Colore.repository.EnderecoRepository;
 import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
 import com.herokuapp.colorebackend.Colore.security.UserSS;
 import com.herokuapp.colorebackend.Colore.service.exceptions.AuthorizationException;
@@ -39,7 +39,7 @@ public class UsuarioService {
 	private UsuarioRepository repo;
 	
 	@Autowired
-	private Endereco2Repository endereco2Repository;
+	private EnderecoRepository endereco2Repository;
 
 	public Usuario find(Integer id) {
 		
@@ -109,7 +109,7 @@ public class UsuarioService {
 	public Usuario fromDTO(UsuarioNewDTO objDto) {
 		Usuario usu = new Usuario(null, objDto.getNome(), objDto.getEmail(), objDto.getCpfOuCnpj(), TipoUsuario.toEnum(objDto.getTipo()), pe.encode(objDto.getSenha()));
 		Cidade cid = new Cidade(objDto.getCidadeId(), null, null);
-		Endereco2 end = new Endereco2(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCep(), usu, cid);
+		Endereco end = new Endereco(null, objDto.getLogradouro(), objDto.getNumero(), objDto.getComplemento(), objDto.getBairro(), objDto.getCep(), usu, cid);
 		usu.getEnderecos().add(end);
 		usu.getTelefones().add(objDto.getTelefone1());
 		if (objDto.getTelefone2()!=null) {

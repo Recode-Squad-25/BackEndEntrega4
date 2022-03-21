@@ -10,11 +10,11 @@ import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
 import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
 import com.herokuapp.colorebackend.Colore.models.Cidade;
 import com.herokuapp.colorebackend.Colore.models.Endereco;
-import com.herokuapp.colorebackend.Colore.models.Endereco2;
+import com.herokuapp.colorebackend.Colore.models.Endereco;
 import com.herokuapp.colorebackend.Colore.models.Estado;
 import com.herokuapp.colorebackend.Colore.models.Usuario;
 import com.herokuapp.colorebackend.Colore.repository.CidadeRepository;
-import com.herokuapp.colorebackend.Colore.repository.Endereco2Repository;
+import com.herokuapp.colorebackend.Colore.repository.EnderecoRepository;
 import com.herokuapp.colorebackend.Colore.repository.EstadoRepository;
 import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
 
@@ -33,7 +33,7 @@ public class DBService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	@Autowired
-	private Endereco2Repository enderecoRepository;
+	private EnderecoRepository enderecoRepository;
 	
 
 	public void instantiateDatabase() {
@@ -72,11 +72,11 @@ public class DBService {
 		usuario2.addPerfil(Perfil.ADMIN);
 		usuario2.addPerfil(Perfil.USER);
 		
-		Endereco2 endereco1 = new Endereco2(null, "Rua Carlos Costa", "20", "Apto 201", "Pina", "50720190", usuario1,
+		Endereco endereco1 = new Endereco(null, "Rua Carlos Costa", "20", "Apto 201", "Pina", "50720190", usuario1,
 				cidade1);
-		Endereco2 endereco2 = new Endereco2(null, "Rua Olodum", "1267", "Apto 802", "Barra", "80720310", usuario1,
+		Endereco endereco2 = new Endereco(null, "Rua Olodum", "1267", "Apto 802", "Barra", "80720310", usuario1,
 				cidade2);
-		Endereco2 endereco3 = new Endereco2(null, "Avenida Floriano", "2106", null, "Centro", "281777012", usuario2, cidade1);
+		Endereco endereco3 = new Endereco(null, "Avenida Floriano", "2106", null, "Centro", "281777012", usuario2, cidade1);
 
 		usuario1.getEnderecos().add((Endereco) Arrays.asList(endereco1, endereco2));
 		usuario2.getEnderecos().add((Endereco) Arrays.asList(endereco3));
