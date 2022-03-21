@@ -12,7 +12,6 @@ import com.herokuapp.colorebackend.Colore.service.SmtpEmailService;
 
 
 @Configuration
-@Profile("dev")
 public class DevConfig {
 
 	@Autowired
