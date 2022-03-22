@@ -10,15 +10,12 @@ import com.herokuapp.colorebackend.Colore.model.enums.Perfil;
 import com.herokuapp.colorebackend.Colore.model.enums.TipoUsuario;
 import com.herokuapp.colorebackend.Colore.models.Cidade;
 import com.herokuapp.colorebackend.Colore.models.Endereco;
-import com.herokuapp.colorebackend.Colore.models.Endereco;
 import com.herokuapp.colorebackend.Colore.models.Estado;
 import com.herokuapp.colorebackend.Colore.models.Usuario;
 import com.herokuapp.colorebackend.Colore.repository.CidadeRepository;
 import com.herokuapp.colorebackend.Colore.repository.EnderecoRepository;
 import com.herokuapp.colorebackend.Colore.repository.EstadoRepository;
 import com.herokuapp.colorebackend.Colore.repository.UsuarioRepository;
-
-
 
 @Service
 public class DBService {
@@ -63,25 +60,29 @@ public class DBService {
 		estadoRepository.saveAll(Arrays.asList(estado1, estado2, estado3, estado4, estado5, estado6));
 		cidadeRepository.saveAll(Arrays.asList(cidade1, cidade2, cidade3, cidade4, cidade5, cidade6, cidade7));
 
-		Usuario usuario1 = new Usuario(null, "Patrica Brandão", "coloreprojeto1@gmail.com", "12312312312",TipoUsuario.PESSOAFISICA, pe.encode("1234"));
+		Usuario usuario1 = new Usuario(null, "Patrica Brandão", "patriciabrandaost@gmail.com", "12312312312",TipoUsuario.PESSOAFISICA, pe.encode("1234"));
 		usuario1.getTelefones().addAll(Arrays.asList("37621742", "96192575"));
-		usuario1.addPerfil(Perfil.USER);
+		usuario1.addPerfil(Perfil.ADMIN);
 		
 		Usuario usuario2 = new Usuario(null, "Ana Brandão", "ana@gmail.com", "31628382740", TipoUsuario.PESSOAFISICA, pe.encode("123"));
 		usuario2.getTelefones().addAll(Arrays.asList("93883321", "34252625"));
 		usuario2.addPerfil(Perfil.ADMIN);
-		usuario2.addPerfil(Perfil.USER);
+		
+		Usuario usuario3 = new Usuario(null, "Colore", "coloreprojeto1@gmail.com", "82776446000177", TipoUsuario.PESSOAJURIDICA, pe.encode("12345"));
 		
 		Endereco endereco1 = new Endereco(null, "Rua Carlos Costa", "20", "Apto 201", "Pina", "50720190", usuario1,
 				cidade1);
 		Endereco endereco2 = new Endereco(null, "Rua Olodum", "1267", "Apto 802", "Barra", "80720310", usuario1,
 				cidade2);
 		Endereco endereco3 = new Endereco(null, "Avenida Floriano", "2106", null, "Centro", "281777012", usuario2, cidade1);
+		
+		Endereco endereco4 = new Endereco(null, "Avenida Agamenon Magalhães", "200", null, "Centro", "99881234", usuario3, cidade4);
 
-		usuario1.getEnderecos().add((Endereco) Arrays.asList(endereco1, endereco2));
-		usuario2.getEnderecos().add((Endereco) Arrays.asList(endereco3));
+		usuario1.getEnderecos().addAll(Arrays.asList(endereco1, endereco2));
+		usuario2.getEnderecos().addAll(Arrays.asList(endereco3));
+		usuario3.getEnderecos().addAll(Arrays.asList(endereco4));
 
-		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2));
-		enderecoRepository.saveAll(Arrays.asList(endereco1, endereco2, endereco3));
+		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2, usuario3));
+		enderecoRepository.saveAll(Arrays.asList(endereco1, endereco2, endereco3, endereco4));
 	}
 }

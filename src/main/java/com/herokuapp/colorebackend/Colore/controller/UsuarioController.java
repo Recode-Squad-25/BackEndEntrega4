@@ -23,8 +23,6 @@ import com.herokuapp.colorebackend.Colore.dto.UsuarioNewDTO;
 import com.herokuapp.colorebackend.Colore.models.Usuario;
 import com.herokuapp.colorebackend.Colore.service.UsuarioService;
 
-
-
 @RestController
 @RequestMapping(value="/usuarios")
 public class UsuarioController {
