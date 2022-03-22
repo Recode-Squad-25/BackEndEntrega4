@@ -13,9 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Colore</name>
 	<description>A iniciativa da Projeto COLORE pretende promover igualdade e respeito, sobretudo no que tange o processo de inclusão do público LGBTQIA+ no mercado de trabalho.</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
