@@ -44,7 +44,7 @@ private VagaRepository vagaRepository;
 		return new ResponseEntity<>(vagas, HttpStatus.OK);
 	}
 	
-	@GetMapping(path="/vaga/{id}")
+	@GetMapping(path="/{id}")
 	public ResponseEntity<Optional<Vaga>> getById(@PathVariable Integer id){
 		Optional<Vaga> vaga;
 		try {
@@ -55,7 +55,7 @@ private VagaRepository vagaRepository;
 		}
 	}
 	
-	@DeleteMapping(path="/delete/{id}")
+	@DeleteMapping(path="/{id}")
 	public ResponseEntity<Optional<Vaga>> deleteById(@PathVariable Integer id){
 		try {
 			vagaRepository.deleteById(id);
@@ -65,7 +65,7 @@ private VagaRepository vagaRepository;
 		}
 	}
 	
-	@PutMapping(value="/update/{id}")
+	@PutMapping(value="/{id}")
 	public ResponseEntity<Vaga> update(@PathVariable Integer id, @RequestBody Vaga newVaga){
 		return vagaRepository.findById(id)
 			   .map(vaga -> {
