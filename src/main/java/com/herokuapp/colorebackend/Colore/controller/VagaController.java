@@ -44,7 +44,7 @@ private VagaRepository vagaRepository;
 		return new ResponseEntity<>(vagas, HttpStatus.OK);
 	}
 	
-	@GetMapping(path="/{id}")
+	@GetMapping(path="/vaga/{id}")
 	public ResponseEntity<Optional<Vaga>> getById(@PathVariable Integer id){
 		Optional<Vaga> vaga;
 		try {
