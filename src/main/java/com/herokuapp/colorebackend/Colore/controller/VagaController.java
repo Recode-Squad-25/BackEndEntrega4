@@ -22,7 +22,7 @@ import com.herokuapp.colorebackend.Colore.repository.VagaRepository;
 
 @CrossOrigin(origins = "https://colore-front-end.herokuapp.com")
 @RestController
-@RequestMapping(value="/Vagas")
+@RequestMapping(value="/vagas")
 public class VagaController {
 private VagaRepository vagaRepository;
 	
@@ -55,7 +55,7 @@ private VagaRepository vagaRepository;
 		}
 	}
 	
-	@DeleteMapping(path="/vaga/{id}")
+	@DeleteMapping(path="/delete/{id}")
 	public ResponseEntity<Optional<Vaga>> deleteById(@PathVariable Integer id){
 		try {
 			vagaRepository.deleteById(id);
@@ -65,7 +65,7 @@ private VagaRepository vagaRepository;
 		}
 	}
 	
-	@PutMapping(value="/vaga/{id}")
+	@PutMapping(value="/update/{id}")
 	public ResponseEntity<Vaga> update(@PathVariable Integer id, @RequestBody Vaga newVaga){
 		return vagaRepository.findById(id)
 			   .map(vaga -> {
